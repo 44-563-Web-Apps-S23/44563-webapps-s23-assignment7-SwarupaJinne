@@ -19,6 +19,7 @@
   <button type="button" class="btn btn-info" onclick="startTime()">Start Timer</button>
   <div id="counter"> Count </div>
   <button type="button" class="btn btn-info" onclick="recordTime()">React</button>
+
   
   
  
@@ -26,23 +27,23 @@
   let reactTime 
   function recordTime(){
     reactTime=undefined;
-    
+    //Set(reactTime)= new Date.now();
     reactTime= Date.now();
     console.log(reactTime);
   }
   let i=0;
 
-  let round=Math.floor((Math.random() * 10) + 2);
-  
+  let rv=Math.floor((Math.random() * 10) + 2);
+  //let rv=Math.floor((Math.random() * 10) + 2);
   function startTime(){
-    round=Math.floor((Math.random() * 10) + 2);
-    for( i=0;i<round;i++){
-        console.log(round);
-        setTimeout(i); 
+     rv=Math.floor((Math.random() * 10) + 2);
+    for( i=0;i<rv;i++){
+       console.log(rv);
+        setTimeou(i); 
     }
-
-    setTimeout( () => {
-        console.log("Entered anononymous");
+  
+  setTimeout( () => {
+        console.log("Entered anononymouse fn");
          if(reactTime==undefined){
             console.log("entered if");
             document.getElementById('target').innerHTML="Too Slow";
@@ -57,13 +58,13 @@
             document.getElementById('target').innerHTML="Time was "+temp;
          }
         },8*1000);
-    }
-    
+   
+    } 
     function setTimeou(i)
    {
         setTimeout(()=>{
                 document.getElementById('countdown').innerHTML=i;
-            },(round-i)*1000);
+            },(rv-i)*1000);
     }
   
   </script>

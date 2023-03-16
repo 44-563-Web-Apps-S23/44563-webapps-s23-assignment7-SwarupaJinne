@@ -74,7 +74,7 @@
 	<div id="help">
 		Help report
 	</div>
-	<p><button  class="btn btn-primary onclick="bonus()">Bonus</button></p>
+	<p><button type="button" class="btn btn-primary" onclick="newGame()">Bonus</button></p>
 
 	<div class="container-fluid">
     
@@ -125,7 +125,7 @@
 <script>
 		var ids=["id0","id1","id2","id3","id4","id5","id6","id7","id8","id9","id10",
     "id11","id12","id13","id14","id15","id16","id17","id18","id19","id20","id21","id22","i23"]
-        let checkCount=0
+	let checkCount=0
         let penalty=0
         let lastCheck=0
         let mouseLocation=13
@@ -192,6 +192,20 @@
                 penalty.innerHTML="Penalty is "+penalty;
             }
         }
+        function newGame(){
+            mouseLocation = Math.floor(Math.random()*24)
+            catLocation = Math.floor(Math.random()*24)
+            document.getElementById("bushes").innerHTML = "Number of bushes checked is 0"
+            document.getElementById("penalty").innerHTML = "Penalty is 0"
+            for(var i=0;i<=23;i++){
+                document.getElementById(ids[i]).src="bush.jpg"
+                
+            }
+        }
+
+
+
+		
 	</script>
 	</body>
 </html>
